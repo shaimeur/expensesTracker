@@ -1,3 +1,4 @@
+import React from "react";
 import "./ExpenseDate.css";
 const  ExpenseDate = (props) => {
   const year = props.date.getFullYear();
