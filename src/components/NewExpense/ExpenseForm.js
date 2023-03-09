@@ -2,37 +2,59 @@ import React  from "react";
 import { useState } from "react";
 import './ExpenseForm.css'
 const ExpenseForm = () =>{
-    // const [entredTitle,setEntredTitle] = useState('');
-    // const [entredAmount,setEntredAmount] = useState('');
-    // const [entredDate,setEntredDate] = useState('');
+    const [entredTitle,setEntredTitle] = useState('');
+    const [entredAmount,setEntredAmount] = useState('');
+    const [entredDate,setEntredDate] = useState('');
 
-    const [userInput,setUserInput] = useState({
-        entredTitle : '',
-        entredAmount : '',
-        entredDate : ''
-    })
+    // using object instead of primitive types
+    // const [userInput,setUserInput] = useState({
+    //     entredTitle : '',
+    //     entredAmount : '',
+    //     entredDate : ''
+    // })
 
     const titleChangeHandler = (event) =>{
-         //setEntredTitle(event.target.value);
-         setUserInput({
-            ...userInput,
-            entredTitle : event.target.value,
-         })
+         setEntredTitle(event.target.value);
+
+         //First approche
+        //  setUserInput({
+        //     ...userInput,
+        //     entredTitle : event.target.value,
+        //  })
+
+        //Second approche
+        // setUserInput((prevState)=>{
+        //     return {...prevState,entredTitle:event.target.value}
+        // })
     }
 
     const amountChangeHandler = (event) =>{
-            // setEntredAmount(event.target.value);
-            setUserInput({
-                ...userInput,
-                entredAmount : event.target.value
-            })
+            setEntredAmount(event.target.value);
+
+            //First approche
+            // setUserInput({
+            //     ...userInput,
+            //     entredAmount : event.target.value
+            // })
+
+            //Second approche
+            // setUserInput((prevState)=>{
+            //   return  {...prevState,entredAmount:event.target.value}
+            // })
     }
     const dateChangeHandler = (event) =>{
-        // setEntredDate(event.target.value);
-        setUserInput({
-            ...userInput,
-            entredDate : event.target.value
-        })
+        setEntredDate(event.target.value);
+
+        //First approche
+        // setUserInput({
+        //     ...userInput,
+        //     entredDate : event.target.value
+        // })
+
+        //Second approche
+        // setUserInput((prevState)=>{
+        //     return {...prevState,entredDate:event.target.value}
+        // })
     }
     return (
         <form>
