@@ -56,8 +56,20 @@ const ExpenseForm = () =>{
         //     return {...prevState,entredDate:event.target.value}
         // })
     }
+    const submitHundler = (event) =>{
+        event.preventDefault();
+        const expenseData = {
+            title : entredTitle,
+            amount : entredAmount,
+            date : new Date(entredDate)
+        }
+           if(expenseData !== {}){
+                expenseData.value = {}
+           }
+        console.log(expenseData)
+    }
     return (
-        <form>
+        <form onSubmit = {submitHundler}>
             <div className ="new-expense__controls">
                 <div className ="new-expense__control">
                     <label>Title</label>
@@ -73,7 +85,7 @@ const ExpenseForm = () =>{
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button>Add Expense</button>
+                <button type = "submit">Add Expense</button>
             </div>
         </form>
     )
