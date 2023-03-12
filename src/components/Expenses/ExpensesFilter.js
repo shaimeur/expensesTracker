@@ -5,7 +5,7 @@ import "./ExpensesFilter.css";
 const ExpensesFilter = (props) => {
   const [selectedYear, setSelectedYear] = useState("");
 
-  const dropDownChangeHandler = (event) => {
+  const filterYear = (event) => {
     const year = event.target.value;
     console.log(year, "from ExpenseFilter component");
     setSelectedYear(year);
@@ -17,7 +17,7 @@ const ExpensesFilter = (props) => {
     <div className="expenses-filter">
       <div className="expenses-filter__control">
         <label>Filter by year</label>
-        <select onChange={dropDownChangeHandler}>
+        <select onChange={filterYear}>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>

@@ -6,14 +6,14 @@ import Card from "../UI/Card";
 
 const Expenses = (props) => {
 
-    const filterChangeHundler = (selectedYear) =>{
-        console.log(selectedYear," : is the year from Expenses")
-    }
+  const filterExpenseByYear = (result) =>{
+      console.log(result," : is the year from Expenses")
+  }
 
-  return (
-    <div>
-      <Card className="expenses">
-        <ExpensesFilter onChangeFilter = {filterChangeHundler} />
+return (
+  <div>
+    <Card className="expenses">
+      <ExpensesFilter onFilterExpense = {filterExpenseByYear} />
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
