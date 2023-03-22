@@ -6,53 +6,15 @@ const ExpenseForm = (props) =>{
     const [entredAmount,setEntredAmount] = useState('');
     const [entredDate,setEntredDate] = useState('');
 
-    // using object instead of primitive types
-    // const [userInput,setUserInput] = useState({
-    //     entredTitle : '',
-    //     entredAmount : '',
-    //     entredDate : ''
-    // })
-
     const titleChangeHandler = (event) =>{
          setEntredTitle(event.target.value);
-         //First approche
-        //  setUserInput({
-        //     ...userInput,
-        //     entredTitle : event.target.value,
-        //  })
-
-        //Second approche
-        // setUserInput((prevState)=>{
-        //     return {...prevState,entredTitle:event.target.value}
-        // })
     }
 
     const amountChangeHandler = (event) =>{
             setEntredAmount(event.target.value);
-            //First approche
-            // setUserInput({
-            //     ...userInput,
-            //     entredAmount : event.target.value
-            // })
-
-            //Second approche
-            // setUserInput((prevState)=>{
-            //   return  {...prevState,entredAmount:event.target.value}
-            // })
     }
     const dateChangeHandler = (event) =>{
         setEntredDate(event.target.value);
-
-        //First approche
-        // setUserInput({
-        //     ...userInput,
-        //     entredDate : event.target.value
-        // })
-
-        //Second approche
-        // setUserInput((prevState)=>{
-        //     return {...prevState,entredDate:event.target.value}
-        // })
     }
     const submitHundler = (event) =>{
 
@@ -70,9 +32,8 @@ const ExpenseForm = (props) =>{
         setEntredAmount('');
         setEntredDate('');
 
-
-
     }
+
     return (
         <form onSubmit = {submitHundler}>
             <div className ="new-expense__controls">
@@ -90,6 +51,7 @@ const ExpenseForm = (props) =>{
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button onClick={props.onCancel} type="button">Cancel</button>
                 <button type = "submit">Add Expense</button>
             </div>
         </form>
